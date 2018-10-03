@@ -1,0 +1,141 @@
+<div class="container">
+    <h1>User Rigstration From</h1>
+    <form #userForm="ngForm" >
+        <div class="form-group">
+          <label>Enter First Name<b class="text-danger">*</b></label>
+          <input type="text" name="fname" #nameRef="ngModel" class="form-control" pattern="[a-zA-Z]+" 
+          minlength="5" maxlength="10" required ngModel>
+                <div *ngIf="nameRef.errors&&(nameRef.dirty||nameRef.touched)" class=" text-danger">
+                  
+                    <div [hidden]="!nameRef.errors.required">
+                    Please Enter Name(Ex:Subbu)
+                    </div>
+                    <div [hidden]="!nameRef.errors.minlength">
+                    Please Enter Minmum length of name 5
+                    </div>
+                    <div [hidden]="!nameRef.errors.maxlength">
+                    Please Enter Max length of name 10
+                    </div>
+                    <div [hidden]="!nameRef.errors.pattern">
+                    Please Enter Charters Only
+                    </div>
+
+
+                </div>
+        </div>
+        <div class="form-group">
+            <label>Enter Second Name<b class="text-danger">*</b></label>
+            <input type="text" name="sname" #snameRef="ngModel" class="form-control" pattern="[a-zA-Z]+" 
+            minlength="5" maxlength="10" required ngModel>
+                  <div *ngIf="snameRef.errors && (snameRef.dirty || snameRef.touched)" class=" text-danger">
+                    
+                      <div [hidden]="!snameRef.errors.required">
+                      Please Enter Name(Ex:Sodhi)
+                      </div>
+                      <div [hidden]="!snameRef.errors.minlength">
+                      Please Enter Minmum length of name 5
+                      </div>
+                      <div [hidden]="!snameRef.errors.maxlength">
+                      Please Enter Max length of name 10
+                      </div>
+                      <div [hidden]="!snameRef.errors.pattern">
+                      Please Enter Charters Only
+                      </div>
+  
+  
+                  </div>
+          </div>
+          <div class="form-group">
+              <label>Contact Number<b class="text-danger">*</b></label>
+              <input type="text" name="Name" #contactRef="ngModel" class="form-control"
+               pattern="[0-9]+" max="10" required ngModel>
+                    <div *ngIf="contactRef.errors&&(contactRef.dirty||contactRef.touched)" 
+                    class=" text-danger">
+                      
+                        <div [hidden]="!contactRef.errors.required">
+                        Please Enter Numbers Only
+                        </div>
+                        <!-- <div [hidden]="!nameRef.errors.minlength">
+                        Please Enter Minmum length of name 5
+                        </div>
+                        <div [hidden]="!nameRef.errors.maxlength">
+                        Please Enter Max length of name 10
+                        </div> -->
+                        <div [hidden]="!contactRef.errors.pattern">
+                        Please Enter Ur Contact Number With code +91
+                        </div>
+
+    
+                    </div>
+            </div>
+            <div class="form-group">
+                <label>Enter Email<b class="text-danger">*</b></label>
+                <input type="text" name="email" #emailRef="ngModel" class="form-control"
+                 pattern="^[a-zA-Z][a-zA-Z0-9]+\@[a-z]+\.com"  required ngModel>
+                      <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" class=" text-danger">
+                        
+                          <div [hidden]="!emailRef.errors.required">
+                          Please Enter Your Email
+                          </div>
+                          <!-- <div [hidden]="!emailRef.errors.minlength">
+                          Please Enter Minmum length of name 5
+                          </div>
+                          <div [hidden]="!emailRef.errors.maxlength">
+                          Please Enter Max length of name 10
+                          </div> -->
+                          <div [hidden]="!emailRef.errors.pattern">
+                              Please Enter Your Email Like(Ex:Sodhi148@gmail.com)
+                          </div>
+      
+      
+                      </div>
+              </div>
+              <div ngModelGrroup="Address">
+                <div class="form-group">
+                    <label>Enter Street<b class="text-danger">*</b></label>
+                    <input type="text" name="street" #streetRef="ngModel" class="form-control"
+                     pattern="[a-zA-Z0-9]+"  required ngModel>
+                          <div *ngIf="streetRef.errors && (streetRef.dirty || streetRef.touched)" 
+                          class=" text-danger">
+                            
+                              <div [hidden]="!streetRef.errors.required">
+                              Please Menction street/Village Here!
+                              </div>
+                              <div [hidden]="!streetRef.errors.pattern">
+                                  Don't Use Any Special Chacters
+                              </div>
+                          </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Enter city<b class="text-danger">*</b></label>
+                    <input type="text" name="city" #cityRef="ngModel" class="form-control"
+                     pattern="[a-zA-Z]+"  required ngModel>
+                          <div *ngIf="cityRef.errors && (cityRef.dirty || cityRef.touched)" class=" text-danger">
+                            
+                              <div [hidden]="!cityRef.errors.required">
+                              Please Menction street/Village Here!
+                              </div>
+                              <div [hidden]="!cityRef.errors.pattern">
+                                  Don't Use Any Special Chacters
+                              </div>
+                          </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Enter Postalcode<b class="text-danger">*</b></label>
+                    <input type="text" name="pscode" #pscodeRef="ngModel" class="form-control"
+                     minlength="6" pattern="[0-9]+"  required ngModel>
+                          <div *ngIf="pscodeRef.errors && (pscodeRef.dirty || pscodeRef.touched)" class=" text-danger">
+                            
+                              <div [hidden]="!pscodeRef.errors.required">
+                              Please Menction your Postalcode!
+                              </div>
+                              <div [hidden]="!pscodeRef.errors.pattern">
+                                  Please Enter Correct Postalcode
+                              </div>
+                          </div>
+                  </div>
+              </div>
+        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-success">
+          Done</button>
+    </form>
+</div>

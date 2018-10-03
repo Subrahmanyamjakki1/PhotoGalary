@@ -1,0 +1,25 @@
+<p>
+  inject-services works!
+</p>
+<div *ngFor="let i of EmpDetails">
+    <h1>{{i.empid}}  {{i.empname}}  {{i.salary}}</h1>
+</div>
+<!-- <div *ngFor="let i of JsonObj">
+  <h1>{{i.userId}}  {{i.title}}  </h1>
+</div> -->
+
+<table class="table table-hover table-dark">
+<tr class="row">
+    <th>User Id</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+</tr>
+ <tr *ngFor="let i of JsonObj"  onmouse>
+    <td >{{i.userId}}</td>
+    <td  >{{i.id}} </td>
+    <td  >{{i.title}}</td>
+    <td >{{i.body}}</td>
+    
+</tr> 
+</table>

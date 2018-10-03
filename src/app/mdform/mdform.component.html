@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-info" >ModelDrivenF RegisterForm  </h1>
+  <form FromGroup="userForm" (ngSubmit)="onSubmit()">
+    <div class="from-group">
+        <label>Enter First Name<b class="text-danger">*</b></label>
+        <input type="text"  #nameRef class="form-control" formControlName="name">
+        <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+          Please Enter Name
+        </div>
+        <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+            Please Enter Name atleast 5 charcter
+          </div>
+    </div>
+    <div class="from-group">
+        <label>Contact Number<b class="text-danger">*</b></label>
+        <input type="text" class="form-control" formControlName="Contact">
+        <div *ngIf="userForm.controls['Contact'].hasError('required')" class="alert alert-danger">
+          Please Enter Contact
+        </div>
+        <div *ngIf="userForm.controls['Contact'].hasError('minlength')" class="alert alert-danger">
+            Please Enter 10 Numbers
+          </div>
+    </div>
+    <!-- {{userForm.name}} -->
+    <br><button [disabled]="!userForm.form.valid" type="submit" class="btn btn-success">
+        Done
+    </button>
+
+  </form>
+</div>
